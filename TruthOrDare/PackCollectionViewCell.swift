@@ -22,6 +22,8 @@ class PackCollectionViewCell: UICollectionViewCell {
     }()
     override init(frame: CGRect) {
         super.init(frame: .zero)
+        contentView.layer.shadowRadius = 5
+        contentView.layer.shadowOpacity = 0.7
         contentView.addSubview(bg)
         
         bg.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
@@ -49,10 +51,11 @@ class PackCollectionViewCell: UICollectionViewCell {
         title.numberOfLines = 0
         title.textAlignment = .center
         contentView.addSubview(title)
-        title.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 30).isActive = true
-        title.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        title.trailingAnchor.constraint(lessThanOrEqualToSystemSpacingAfter: contentView.trailingAnchor, multiplier: -0.5).isActive = true
+        title.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 35).isActive = true
         
+        title.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -20).isActive = true
+        
+        title.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20).isActive = true
         
         contentView.addSubview(level)
         level.topAnchor.constraint(equalTo: title.bottomAnchor, constant: 30).isActive = true

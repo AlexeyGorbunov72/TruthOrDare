@@ -8,26 +8,24 @@
 
 import UIKit
 
-class PickPackViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class PickPackViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, needsReload {
+    func reloadCollectionViewPlease() {
+        DispatchQueue.main.async {
+            self.myCollectionView.reloadData()
+        }
+        
+    }
+    
     fileprivate let myCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
         let collectionv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionv.translatesAutoresizingMaskIntoConstraints = false
         collectionv.register(PackCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionv.showsVerticalScrollIndicator = false
         return collectionv
     }()
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let packCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! PackCollectionViewCell
-        packCell.title.text = "стандартный"
-        packCell.level.text = "102/132"
-        return packCell
-    }
+    private let concentrate = ConcentrateAPIPickPack()
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: myCollectionView.frame.width/1.5,height: myCollectionView.frame.height/2)
     }
@@ -35,9 +33,10 @@ class PickPackViewController: UIViewController, UICollectionViewDelegate, UIColl
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        concentrate.delegate = self
         myCollectionView.backgroundColor = .white
         myCollectionView.delegate = self
-        myCollectionView.dataSource = self
+        myCollectionView.dataSource = concentrate
         view.addSubview(myCollectionView)
         let margins = view.layoutMarginsGuide
          NSLayoutConstraint.activate([
@@ -47,7 +46,6 @@ class PickPackViewController: UIViewController, UICollectionViewDelegate, UIColl
            myCollectionView.bottomAnchor.constraint(equalTo: margins.bottomAnchor)])
         
         
- 
     }
 
 }
