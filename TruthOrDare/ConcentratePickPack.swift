@@ -14,7 +14,10 @@ protocol needsReload {
 class ConcentrateAPIPickPack: NSObject, UICollectionViewDataSource{
     var packsHub = Packs(packs: [Pack.init(id: -1, title: "", levelAction: "1488", levelTruth: "228")])
     var delegate: needsReload?
+    
     private let url = "http://192.168.0.12:8000/api/getPacks"
+    private let urlPackContent = "http://192.168.0.12:8000/api/getContentOfPack/"
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return packsHub.packs.count
     }
@@ -26,7 +29,6 @@ class ConcentrateAPIPickPack: NSObject, UICollectionViewDataSource{
         return packCell
     }
     func getAllPacks(){
-        
         if let url = URL(string: url){
             URLSession.shared.dataTask(with: url){data, res, err in
                 if let data = data{
@@ -36,8 +38,26 @@ class ConcentrateAPIPickPack: NSObject, UICollectionViewDataSource{
                         self.packsHub = json
                         self.delegate!.reloadCollectionViewPlease()
                     }
-                    
-                    
+                }
+            }.resume()
+        }
+    }
+    
+    public func getIdByIndexPath(_ ind: Int) -> Int{
+        return packsHub.packs[ind].id
+    }
+    func getPackContent(_ indexPath: Int, completionBlock: @escaping (Tasks) -> Void) -> Void{
+        if let url = URL(string: String(urlPackContent + String(self.packsHub.packs[indexPath].id))){
+            print(String(urlPackContent + String(self.packsHub.packs[indexPath].id)))
+            URLSession.shared.dataTask(with: url){data, res, err in
+                if let data = data{
+                    print(12)
+                    let decoder = JSONDecoder()
+                    if let json = try? decoder.decode(Tasks.self, from: data){
+                        completionBlock(json)
+                    }
+                }
+                else{
                 }
             }.resume()
         }
@@ -56,4 +76,13 @@ struct Pack: Decodable{
 }
 struct Packs: Decodable{
     var packs: [Pack]
+}
+
+struct Task: Decodable{
+    var levelOfHard: String
+    var content: String
+    var isTruth: Int
+}
+struct Tasks: Decodable {
+    var pack: [Task]
 }

@@ -8,14 +8,9 @@
 
 import UIKit
 
-class PickPackViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, needsReload {
-    func reloadCollectionViewPlease() {
-        DispatchQueue.main.async {
-            self.myCollectionView.reloadData()
-        }
-        
-    }
+class PickPackViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    let url = "http://192.168.0.12:8000/api/getContentOfPack/"
     fileprivate let myCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -29,7 +24,18 @@ class PickPackViewController: UIViewController, UICollectionViewDelegate, UIColl
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: myCollectionView.frame.width/1.5,height: myCollectionView.frame.height/2)
     }
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        concentrate.getPackContent(indexPath.row) { [unowned self] (task) in
+            DispatchQueue.main.async {
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "packInfo") as! PackInfoViewController
+                    vc.tasks = task
+                    self.navigationController?.pushViewController(vc, animated: true)
+                
+                
+            }
+            
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +44,7 @@ class PickPackViewController: UIViewController, UICollectionViewDelegate, UIColl
         myCollectionView.delegate = self
         myCollectionView.dataSource = concentrate
         view.addSubview(myCollectionView)
+        
         let margins = view.layoutMarginsGuide
          NSLayoutConstraint.activate([
            myCollectionView.leadingAnchor.constraint(equalTo: margins.leadingAnchor),
@@ -48,4 +55,11 @@ class PickPackViewController: UIViewController, UICollectionViewDelegate, UIColl
         
     }
 
+}
+extension PickPackViewController: needsReload{
+    func reloadCollectionViewPlease() {
+        DispatchQueue.main.async {
+            self.myCollectionView.reloadData()
+        }
+    }
 }

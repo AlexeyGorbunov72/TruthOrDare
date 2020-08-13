@@ -21,6 +21,7 @@
 		CAAF25E724E4BBBE00D34BD5 /* PackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAF25E624E4BBBE00D34BD5 /* PackCollectionViewCell.swift */; };
 		CAAF25E924E4BE7000D34BD5 /* PickPackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAF25E824E4BE7000D34BD5 /* PickPackViewController.swift */; };
 		CAAF25EB24E5CBE500D34BD5 /* ConcentratePickPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAF25EA24E5CBE500D34BD5 /* ConcentratePickPack.swift */; };
+		CAAF25ED24E5F4BC00D34BD5 /* PackInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAF25EC24E5F4BC00D34BD5 /* PackInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		CAAF25E624E4BBBE00D34BD5 /* PackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackCollectionViewCell.swift; sourceTree = "<group>"; };
 		CAAF25E824E4BE7000D34BD5 /* PickPackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickPackViewController.swift; sourceTree = "<group>"; };
 		CAAF25EA24E5CBE500D34BD5 /* ConcentratePickPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcentratePickPack.swift; sourceTree = "<group>"; };
+		CAAF25EC24E5F4BC00D34BD5 /* PackInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				CAAF25E624E4BBBE00D34BD5 /* PackCollectionViewCell.swift */,
 				CAAF25E824E4BE7000D34BD5 /* PickPackViewController.swift */,
 				CAAF25EA24E5CBE500D34BD5 /* ConcentratePickPack.swift */,
+				CAAF25EC24E5F4BC00D34BD5 /* PackInfoViewController.swift */,
 			);
 			path = TruthOrDare;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 				CAAF25B024E47FA500D34BD5 /* SceneDelegate.swift in Sources */,
 				CAAF25E724E4BBBE00D34BD5 /* PackCollectionViewCell.swift in Sources */,
 				CAAF25EB24E5CBE500D34BD5 /* ConcentratePickPack.swift in Sources */,
+				CAAF25ED24E5F4BC00D34BD5 /* PackInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
