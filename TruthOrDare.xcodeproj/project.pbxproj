@@ -16,6 +16,10 @@
 		CAAF25BD24E47FAE00D34BD5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAAF25BB24E47FAE00D34BD5 /* LaunchScreen.storyboard */; };
 		CAAF25C824E47FAE00D34BD5 /* TruthOrDareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAF25C724E47FAE00D34BD5 /* TruthOrDareTests.swift */; };
 		CAAF25D324E47FAE00D34BD5 /* TruthOrDareUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAF25D224E47FAE00D34BD5 /* TruthOrDareUITests.swift */; };
+		CAAF25E124E481D400D34BD5 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAF25E024E481D400D34BD5 /* GameViewController.swift */; };
+		CAAF25E324E481F000D34BD5 /* GameConcentrate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAF25E224E481F000D34BD5 /* GameConcentrate.swift */; };
+		CAAF25E724E4BBBE00D34BD5 /* PackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAF25E624E4BBBE00D34BD5 /* PackCollectionViewCell.swift */; };
+		CAAF25E924E4BE7000D34BD5 /* PickPackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAF25E824E4BE7000D34BD5 /* PickPackViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,10 @@
 		CAAF25CE24E47FAE00D34BD5 /* TruthOrDareUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TruthOrDareUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAAF25D224E47FAE00D34BD5 /* TruthOrDareUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TruthOrDareUITests.swift; sourceTree = "<group>"; };
 		CAAF25D424E47FAE00D34BD5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAAF25E024E481D400D34BD5 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		CAAF25E224E481F000D34BD5 /* GameConcentrate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConcentrate.swift; sourceTree = "<group>"; };
+		CAAF25E624E4BBBE00D34BD5 /* PackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackCollectionViewCell.swift; sourceTree = "<group>"; };
+		CAAF25E824E4BE7000D34BD5 /* PickPackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickPackViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +117,10 @@
 				CAAF25BB24E47FAE00D34BD5 /* LaunchScreen.storyboard */,
 				CAAF25BE24E47FAE00D34BD5 /* Info.plist */,
 				CAAF25B624E47FA500D34BD5 /* TruthOrDare.xcdatamodeld */,
+				CAAF25E024E481D400D34BD5 /* GameViewController.swift */,
+				CAAF25E224E481F000D34BD5 /* GameConcentrate.swift */,
+				CAAF25E624E4BBBE00D34BD5 /* PackCollectionViewCell.swift */,
+				CAAF25E824E4BE7000D34BD5 /* PickPackViewController.swift */,
 			);
 			path = TruthOrDare;
 			sourceTree = "<group>";
@@ -262,10 +274,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAAF25E124E481D400D34BD5 /* GameViewController.swift in Sources */,
 				CAAF25B824E47FA500D34BD5 /* TruthOrDare.xcdatamodeld in Sources */,
+				CAAF25E324E481F000D34BD5 /* GameConcentrate.swift in Sources */,
 				CAAF25B224E47FA500D34BD5 /* ViewController.swift in Sources */,
+				CAAF25E924E4BE7000D34BD5 /* PickPackViewController.swift in Sources */,
 				CAAF25AE24E47FA500D34BD5 /* AppDelegate.swift in Sources */,
 				CAAF25B024E47FA500D34BD5 /* SceneDelegate.swift in Sources */,
+				CAAF25E724E4BBBE00D34BD5 /* PackCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
