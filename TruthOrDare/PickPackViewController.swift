@@ -25,11 +25,13 @@ class PickPackViewController: UIViewController, UICollectionViewDelegate, UIColl
         return CGSize(width: myCollectionView.frame.width/1.5,height: myCollectionView.frame.height/2)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        concentrate.getPackContent(indexPath.row) { [unowned self] (task) in
+        concentrate.getPackContent(indexPath.row) { [unowned self] (tasks) in
             DispatchQueue.main.async {
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "packInfo") as! PackInfoViewController
-                    vc.tasks = task
-                    self.navigationController?.pushViewController(vc, animated: true)
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
+                vc.modalPresentationStyle = .fullScreen
+                vc.tasks = tasks
+                
+                self.present(vc, animated: true)
                 
                 
             }
