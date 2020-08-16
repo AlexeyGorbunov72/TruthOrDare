@@ -10,7 +10,10 @@ import UIKit
 
 class GameViewController: UIViewController {
     
+    @IBOutlet weak var claseButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
     
+ 
     @IBOutlet weak var chooseView: UIView!
     @IBAction func chooseAction(_ sender: UIButton) {
         viewNewActionTask()
@@ -19,6 +22,9 @@ class GameViewController: UIViewController {
         viewNewTruthTask()
     }
     @IBAction func closeGameButton(_ sender: UIButton) {
+        let navc = storyboard?.instantiateViewController(identifier: "start") as! UINavigationController
+        navc.modalPresentationStyle = .fullScreen
+        present(navc, animated: true)
     }
     @IBAction func nextTaskButton(_ sender: UIButton) {
         appearChooseView()
@@ -39,14 +45,22 @@ class GameViewController: UIViewController {
     var concentrate: GameConcentrate?
     override func viewDidLoad() {
         super.viewDidLoad()
+        nextButton.layer.cornerRadius = nextButton.frame.height / 2
+        nextButton.clipsToBounds = true
+        claseButton.layer.cornerRadius = claseButton.frame.height / 2
+        claseButton.clipsToBounds = true
+        
         contentLabel.isEditable = false
         actionCardView.isHidden = true
-        chooseView.layer.shadowRadius = 5
-        chooseView.layer.shadowOpacity = 0.7
-        chooseView.layer.shadowOffset = CGSize(width: 10, height: 10)
         actionCardView.layer.shadowRadius = 5
         actionCardView.layer.shadowOpacity = 0.7
         actionCardView.layer.shadowOffset = CGSize(width: 10, height: 10)
+        chooseView.layer.shadowRadius = 5
+        chooseView.layer.shadowOpacity = 0.7
+        chooseView.layer.shadowOffset = CGSize(width: 10, height: 10)
+        
+        
+        
     }
     func viewNewActionTask(){
         if let task = concentrate?.getNewActionTask(){
@@ -75,28 +89,20 @@ class GameViewController: UIViewController {
         contentLabel.text = task.content
     }
     func appearActionView() {
-        let buffer_ = self.actionCardView.layer.zPosition
-        self.actionCardView.layer.zPosition = self.chooseView.layer.zPosition + 10
-        UIView.transition(with: self.chooseView, duration: 3, options: .transitionCurlUp, animations: {
-            self.chooseView.isHidden = true
+        
+        self.chooseView.isHidden = true
+        UIView.transition(with: self.actionCardView, duration: 0.5, options: .transitionFlipFromLeft, animations: { [unowned self] in
             self.actionCardView.isHidden = false
-        }) { finish in
-            self.actionCardView.layer.zPosition = buffer_
-        }
+        })
+        
         
     }
     func appearChooseView() {
-        let buffer_ = self.chooseView.layer.zPosition
-        self.chooseView.layer.zPosition = self.actionCardView.layer.zPosition + 10
-        
-        UIView.transition(with: self.actionCardView, duration: 3, options: .transitionCurlUp, animations: {
-            self.actionCardView.isHidden = true
+        self.actionCardView.isHidden = true
+        UIView.transition(with: self.chooseView, duration: 0.5, options: .transitionFlipFromLeft, animations: { [unowned self] in
             self.chooseView.isHidden = false
             
-        }) { finish in
-            self.chooseView.layer.zPosition = buffer_
-            
-        }
+        })
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
