@@ -15,9 +15,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         pic.rotate()
-        newGameButton.titleLabel?.font = .boldSystemFont(ofSize: 30)
+        newGameButton.titleLabel?.font = .boldSystemFont(ofSize: 20)
         newGameButton.layer.cornerRadius = newGameButton.frame.height / 2
-        newPackButton.titleLabel?.font = .boldSystemFont(ofSize: 30)
+        newPackButton.titleLabel?.font = .boldSystemFont(ofSize: 20)
         newPackButton.layer.cornerRadius = newGameButton.frame.height / 2
     }
     override func viewDidAppear(_ animated: Bool) {
