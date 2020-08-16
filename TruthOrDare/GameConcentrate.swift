@@ -35,6 +35,9 @@ class GameConcentrate{
             return nil
         }
     }
+    func isGameOver() -> Bool{
+        return deepTruths + deepActions + 3 > truthTasks.count + actionTasks.count
+    }
     func getNewTruthTask() -> Task?{
         if(deepTruths + 1 < self.truthTasks.count){
             deepTruths += 1

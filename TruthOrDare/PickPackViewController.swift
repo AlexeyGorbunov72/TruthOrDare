@@ -33,7 +33,6 @@ class PickPackViewController: UIViewController, UICollectionViewDelegate, UIColl
                 
                 self.present(vc, animated: true)
                 
-                
             }
             
         }
@@ -45,6 +44,7 @@ class PickPackViewController: UIViewController, UICollectionViewDelegate, UIColl
         myCollectionView.backgroundColor = .white
         myCollectionView.delegate = self
         myCollectionView.dataSource = concentrate
+        myCollectionView.contentInset = UIEdgeInsets(top: 15, left: 0, bottom: 10, right: 0);
         view.addSubview(myCollectionView)
         
         let margins = view.layoutMarginsGuide

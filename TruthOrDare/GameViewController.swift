@@ -9,12 +9,12 @@
 import UIKit
 
 class GameViewController: UIViewController {
+    let gameOver = UIAlertController(title: "Карточки кончились", message: "Покидаем помещение молодые люди", preferredStyle: UIAlertController.Style.alert)
     
     @IBOutlet weak var claseButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
-    
- 
     @IBOutlet weak var chooseView: UIView!
+    
     @IBAction func chooseAction(_ sender: UIButton) {
         viewNewActionTask()
     }
@@ -45,11 +45,13 @@ class GameViewController: UIViewController {
     var concentrate: GameConcentrate?
     override func viewDidLoad() {
         super.viewDidLoad()
+        gameOver.addAction(UIAlertAction(title: "ок", style: UIAlertAction.Style.default, handler: nil))
         nextButton.layer.cornerRadius = nextButton.frame.height / 2
         nextButton.clipsToBounds = true
         claseButton.layer.cornerRadius = claseButton.frame.height / 2
         claseButton.clipsToBounds = true
-        
+        claseButton.layer.shadowOpacity = 0.5
+        claseButton.layer.shadowRadius = 5
         contentLabel.isEditable = false
         actionCardView.isHidden = true
         actionCardView.layer.shadowRadius = 5
@@ -67,6 +69,10 @@ class GameViewController: UIViewController {
             setEmojiLabel(emojiLabel: &emojiLabel, task: task)
             contentLabel.text = task.content
             appearActionView()
+        } else {
+            if (concentrate?.isGameOver())!{
+                self.present(gameOver, animated: true, completion: nil)
+            }
         }
         
     }
@@ -75,6 +81,10 @@ class GameViewController: UIViewController {
             setEmojiLabel(emojiLabel: &emojiLabel, task: task)
             contentLabel.text = task.content
             appearActionView()
+        } else {
+            if (concentrate?.isGameOver())!{
+                self.present(gameOver, animated: true, completion: nil)
+            }
         }
     }
     func setEmojiLabel(emojiLabel: inout UILabel, task: Task){
