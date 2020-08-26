@@ -25,6 +25,10 @@
 		CAAF25EF24E6CDC500D34BD5 /* PackInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAF25EE24E6CDC400D34BD5 /* PackInfoTableViewCell.swift */; };
 		CAAF25F124E6D09400D34BD5 /* concentrateInfoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAF25F024E6D09400D34BD5 /* concentrateInfoTableView.swift */; };
 		CAAF25F324E7410E00D34BD5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAF25F224E7410D00D34BD5 /* CardView.swift */; };
+		CAB44EB724F68107007E27FF /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB44EB624F68107007E27FF /* AddTaskViewController.swift */; };
+		CAB685DE24F01CF7004AAF26 /* addPackConcentrate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB685DD24F01CF7004AAF26 /* addPackConcentrate.swift */; };
+		CAB8BF4F24EB25FB008EA452 /* AddPackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB8BF4E24EB25FB008EA452 /* AddPackViewController.swift */; };
+		CAB8BF5124EB2899008EA452 /* addPackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB8BF5024EB2899008EA452 /* addPackCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +73,10 @@
 		CAAF25EE24E6CDC400D34BD5 /* PackInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackInfoTableViewCell.swift; sourceTree = "<group>"; };
 		CAAF25F024E6D09400D34BD5 /* concentrateInfoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = concentrateInfoTableView.swift; sourceTree = "<group>"; };
 		CAAF25F224E7410D00D34BD5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		CAB44EB624F68107007E27FF /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		CAB685DD24F01CF7004AAF26 /* addPackConcentrate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addPackConcentrate.swift; sourceTree = "<group>"; };
+		CAB8BF4E24EB25FB008EA452 /* AddPackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPackViewController.swift; sourceTree = "<group>"; };
+		CAB8BF5024EB2899008EA452 /* addPackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addPackCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,7 @@
 		CAAF25A124E47FA500D34BD5 = {
 			isa = PBXGroup;
 			children = (
+				CAB44EB624F68107007E27FF /* AddTaskViewController.swift */,
 				CAAF25AC24E47FA500D34BD5 /* TruthOrDare */,
 				CAAF25C624E47FAE00D34BD5 /* TruthOrDareTests */,
 				CAAF25D124E47FAE00D34BD5 /* TruthOrDareUITests */,
@@ -119,6 +128,9 @@
 		CAAF25AC24E47FA500D34BD5 /* TruthOrDare */ = {
 			isa = PBXGroup;
 			children = (
+				CAB8BF5024EB2899008EA452 /* addPackCollectionViewCell.swift */,
+				CAB685DD24F01CF7004AAF26 /* addPackConcentrate.swift */,
+				CAB8BF4E24EB25FB008EA452 /* AddPackViewController.swift */,
 				CAAF25AD24E47FA500D34BD5 /* AppDelegate.swift */,
 				CAAF25AF24E47FA500D34BD5 /* SceneDelegate.swift */,
 				CAAF25B124E47FA500D34BD5 /* ViewController.swift */,
@@ -290,14 +302,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				CAAF25E124E481D400D34BD5 /* GameViewController.swift in Sources */,
+				CAB685DE24F01CF7004AAF26 /* addPackConcentrate.swift in Sources */,
 				CAAF25B824E47FA500D34BD5 /* TruthOrDare.xcdatamodeld in Sources */,
 				CAAF25E324E481F000D34BD5 /* GameConcentrate.swift in Sources */,
+				CAB8BF4F24EB25FB008EA452 /* AddPackViewController.swift in Sources */,
 				CAAF25B224E47FA500D34BD5 /* ViewController.swift in Sources */,
 				CAAF25E924E4BE7000D34BD5 /* PickPackViewController.swift in Sources */,
+				CAB8BF5124EB2899008EA452 /* addPackCollectionViewCell.swift in Sources */,
 				CAAF25AE24E47FA500D34BD5 /* AppDelegate.swift in Sources */,
 				CAAF25F124E6D09400D34BD5 /* concentrateInfoTableView.swift in Sources */,
 				CAAF25F324E7410E00D34BD5 /* CardView.swift in Sources */,
 				CAAF25B024E47FA500D34BD5 /* SceneDelegate.swift in Sources */,
+				CAB44EB724F68107007E27FF /* AddTaskViewController.swift in Sources */,
 				CAAF25E724E4BBBE00D34BD5 /* PackCollectionViewCell.swift in Sources */,
 				CAAF25EF24E6CDC500D34BD5 /* PackInfoTableViewCell.swift in Sources */,
 				CAAF25EB24E5CBE500D34BD5 /* ConcentratePickPack.swift in Sources */,

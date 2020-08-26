@@ -23,7 +23,7 @@ class PackInfoTableViewCell: UITableViewCell {
                 setup()
                 }
               
-                //self.setupLabels(task)
+               
             }
         
         get{
@@ -33,13 +33,17 @@ class PackInfoTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        setup()
     }
+   
     func setup(){
+        
+        contentView.backgroundColor = .systemIndigo
+        contentView.layer.cornerRadius = 20
         contentLabel.translatesAutoresizingMaskIntoConstraints = false
         markLabel.translatesAutoresizingMaskIntoConstraints = false
         markLabel.numberOfLines = 0
         contentLabel.numberOfLines = 0
+        contentLabel.textColor = .white
         contentView.addSubview(markLabel)
         contentView.addSubview(contentLabel)
         NSLayoutConstraint.activate([

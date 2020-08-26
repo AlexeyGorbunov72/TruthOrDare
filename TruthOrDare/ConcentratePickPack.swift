@@ -15,8 +15,8 @@ class ConcentrateAPIPickPack: NSObject, UICollectionViewDataSource{
     var packsHub = Packs(packs: [Pack.init(id: -1, title: "", levelAction: "1488", levelTruth: "228")])
     var delegate: needsReload?
     
-    private let url = "http://192.168.0.12:8000/api/getPacks"
-    private let urlPackContent = "http://192.168.0.12:8000/api/getContentOfPack/"
+    private let url = "http://192.168.1.116:8000/api/getPacks"
+    private let urlPackContent = "http://192.168.1.116:8000/api/getContentOfPack/"
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return packsHub.packs.count
