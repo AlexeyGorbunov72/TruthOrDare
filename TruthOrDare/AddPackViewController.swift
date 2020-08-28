@@ -11,7 +11,13 @@ import UIKit
 class AddPackViewController: UIViewController, UICollectionViewDelegate{
     @IBAction func pressAddButton(_ sender: Any) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "addTask") as! AddTaskViewController
+        vc.delegate = concentrate.self
         self.present(vc, animated: true)
+    }
+    func collectionView(_ collectionView: UICollectionView,
+    willDisplay cell: UICollectionViewCell,
+    forItemAt indexPath: IndexPath){
+        concentrate.animatePlease(indexPath, cell: cell)
     }
     @IBOutlet weak var collectionViewLayout: UICollectionViewFlowLayout! {
         didSet {
@@ -27,42 +33,35 @@ class AddPackViewController: UIViewController, UICollectionViewDelegate{
    
     
     
+    @IBOutlet weak var addPackButton: UIBarButtonItem!
     
+    @IBOutlet weak var plusButton: UIButton!
     @IBOutlet weak var myCollectionView: UICollectionView!
-    let data = Tasks(pack: [Task(levelOfHard: "123", content: "ajdbajskdb asjkdb", isTruth: 1), Task(levelOfHard: "123", content: "ajdbajwfoewfh ioehfjskdb asjkdb", isTruth: 0)])
     
-    
-
-    
+    @IBAction func pressAddPackButton(_ sender: UIBarButtonItem) {
+        concentrate.savePack()
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        concentrate.data = data
+        plusButton.setImage(UIImage(systemName: "plus")?.withTintColor(.white, renderingMode: .alwaysOriginal), for: .normal)
+        plusButton.layer.cornerRadius = plusButton.frame.height / 2
+        plusButton.layer.shadowOpacity = 0.7
+        plusButton.layer.shadowRadius = 5
         concentrate.delegate = self
-        
         myCollectionView.delegate = self
         myCollectionView.dataSource = concentrate
-        setupMyViewController()
+        
         
     }
     
 }
 
-extension AddPackViewController: getCell{
-    func reloadCollectionViewPlease() {
-        DispatchQueue.main.async {
-            self.myCollectionView.reloadData()
-        }
+
+
+extension AddPackViewController: GetCollectionView{
+    func getCollectionView() -> UICollectionView {
+        return myCollectionView
     }
-    func getCell(indexPath: IndexPath) -> UICollectionViewCell{
-        let cell = myCollectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! addPackCollectionViewCell
-        return cell
-    }
-}
-extension AddPackViewController: UICollectionViewDelegateFlowLayout{
     
-    func setupMyViewController(){
-
-    }
+    
 }
-

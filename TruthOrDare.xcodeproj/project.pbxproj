@@ -107,7 +107,6 @@
 		CAAF25A124E47FA500D34BD5 = {
 			isa = PBXGroup;
 			children = (
-				CAB44EB624F68107007E27FF /* AddTaskViewController.swift */,
 				CAAF25AC24E47FA500D34BD5 /* TruthOrDare */,
 				CAAF25C624E47FAE00D34BD5 /* TruthOrDareTests */,
 				CAAF25D124E47FAE00D34BD5 /* TruthOrDareUITests */,
@@ -128,6 +127,7 @@
 		CAAF25AC24E47FA500D34BD5 /* TruthOrDare */ = {
 			isa = PBXGroup;
 			children = (
+				CAB44EB624F68107007E27FF /* AddTaskViewController.swift */,
 				CAB8BF5024EB2899008EA452 /* addPackCollectionViewCell.swift */,
 				CAB685DD24F01CF7004AAF26 /* addPackConcentrate.swift */,
 				CAB8BF4E24EB25FB008EA452 /* AddPackViewController.swift */,
