@@ -17,6 +17,14 @@ class addPackCollectionViewCell: UICollectionViewCell{
     @IBOutlet weak var leftEmoji: UILabel?
     @IBOutlet weak var rightEmoji: UILabel?
     
+    @IBAction func pressTypeButton(_ sender: Any) {
+        self.toggleTypeButton()
+        NotificationCenter.default
+            .post(name: NSNotification.Name("addPack.cell.button.didPress"),
+             object: nil,
+             userInfo: ["id": idOfCell])
+        
+    }
     
     var data: Task{
         set(task){
@@ -37,6 +45,13 @@ class addPackCollectionViewCell: UICollectionViewCell{
             return self.data
         }
     }
+    private func toggleTypeButton(){
+        if typeButton?.titleLabel?.text == "🤫"{
+            typeButton?.setTitle("🤼‍♀️", for: .normal)
+        } else {
+            typeButton?.setTitle("🤫", for: .normal)
+        }
+    }
     func animateSlider(value: String){
         sliderOutlet?.setValue(0, animated:false)
         let newValue = Float(value)
@@ -47,7 +62,7 @@ class addPackCollectionViewCell: UICollectionViewCell{
     @IBAction func sliderPicker(_ sender: Any) {
         if let sender = sender as? UISlider{
             NotificationCenter.default
-            .post(name:           NSNotification.Name("addPack.cell.slider.didChangeValue"),
+            .post(name: NSNotification.Name("addPack.cell.slider.didChangeValue"),
              object: nil,
              userInfo: ["id": idOfCell, "value": sender.value])
         }

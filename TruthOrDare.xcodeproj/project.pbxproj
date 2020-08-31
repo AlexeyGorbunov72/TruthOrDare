@@ -3,11 +3,17 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CAAF25AE24E47FA500D34BD5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAF25AD24E47FA500D34BD5 /* AppDelegate.swift */; };
+		086EF15DDC4D27A61EDFF4BA /* Pods_TruthOrDareTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D11E266CDF1E0F8CCFA511A0 /* Pods_TruthOrDareTests.framework */; };
+		8509545FB49BD6A1CFB2EFFA /* Pods_TruthOrDare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 781F8C8FD1DFCDD4366A8788 /* Pods_TruthOrDare.framework */; };
+		CA0175F324FB0BE7005E7C6A /* APIDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0175F224FB0BE7005E7C6A /* APIDatabase.swift */; };
+		CA0175FA24FC5949005E7C6A /* APIDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0175F224FB0BE7005E7C6A /* APIDatabase.swift */; };
+		CA0175FB24FC594A005E7C6A /* APIDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA0175F224FB0BE7005E7C6A /* APIDatabase.swift */; };
+		CA01764624FC5C95005E7C6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01764524FC5C95005E7C6A /* AppDelegate.swift */; };
+		CA01765024FDB96E005E7C6A /* PacksManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01764F24FDB96E005E7C6A /* PacksManager.swift */; };
 		CAAF25B024E47FA500D34BD5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAF25AF24E47FA500D34BD5 /* SceneDelegate.swift */; };
 		CAAF25B224E47FA500D34BD5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAF25B124E47FA500D34BD5 /* ViewController.swift */; };
 		CAAF25B524E47FA500D34BD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAAF25B324E47FA500D34BD5 /* Main.storyboard */; };
@@ -26,9 +32,11 @@
 		CAAF25F124E6D09400D34BD5 /* concentrateInfoTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAF25F024E6D09400D34BD5 /* concentrateInfoTableView.swift */; };
 		CAAF25F324E7410E00D34BD5 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAAF25F224E7410D00D34BD5 /* CardView.swift */; };
 		CAB44EB724F68107007E27FF /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB44EB624F68107007E27FF /* AddTaskViewController.swift */; };
+		CAB44EB924FAE1EB007E27FF /* APITruthOrDare.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB44EB824FAE1EB007E27FF /* APITruthOrDare.swift */; };
 		CAB685DE24F01CF7004AAF26 /* addPackConcentrate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB685DD24F01CF7004AAF26 /* addPackConcentrate.swift */; };
 		CAB8BF4F24EB25FB008EA452 /* AddPackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB8BF4E24EB25FB008EA452 /* AddPackViewController.swift */; };
 		CAB8BF5124EB2899008EA452 /* addPackCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAB8BF5024EB2899008EA452 /* addPackCollectionViewCell.swift */; };
+		E3C8FF928500447E3AF545E0 /* Pods_TruthOrDare_TruthOrDareUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90FC736A9B53B065898F14CF /* Pods_TruthOrDare_TruthOrDareUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +57,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6CE92054189BB00D7CAF06FF /* Pods-TruthOrDare-TruthOrDareUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruthOrDare-TruthOrDareUITests.debug.xcconfig"; path = "Target Support Files/Pods-TruthOrDare-TruthOrDareUITests/Pods-TruthOrDare-TruthOrDareUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		7254444AC0EB8605EED9FE56 /* Pods-TruthOrDare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruthOrDare.release.xcconfig"; path = "Target Support Files/Pods-TruthOrDare/Pods-TruthOrDare.release.xcconfig"; sourceTree = "<group>"; };
+		781F8C8FD1DFCDD4366A8788 /* Pods_TruthOrDare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TruthOrDare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8308A42F2EB131E36DE23CCE /* Pods-TruthOrDareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruthOrDareTests.release.xcconfig"; path = "Target Support Files/Pods-TruthOrDareTests/Pods-TruthOrDareTests.release.xcconfig"; sourceTree = "<group>"; };
+		90FC736A9B53B065898F14CF /* Pods_TruthOrDare_TruthOrDareUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TruthOrDare_TruthOrDareUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA3871A37A64FFD56B849B28 /* Pods-TruthOrDareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruthOrDareTests.debug.xcconfig"; path = "Target Support Files/Pods-TruthOrDareTests/Pods-TruthOrDareTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C021FEFE35250F9830B2E036 /* Pods-TruthOrDare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruthOrDare.debug.xcconfig"; path = "Target Support Files/Pods-TruthOrDare/Pods-TruthOrDare.debug.xcconfig"; sourceTree = "<group>"; };
+		CA0175F224FB0BE7005E7C6A /* APIDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDatabase.swift; sourceTree = "<group>"; };
+		CA01764524FC5C95005E7C6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../../jkb/jkb/AppDelegate.swift; sourceTree = "<group>"; };
+		CA01764F24FDB96E005E7C6A /* PacksManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacksManager.swift; sourceTree = "<group>"; };
 		CAAF25AA24E47FA500D34BD5 /* TruthOrDare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TruthOrDare.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CAAF25AD24E47FA500D34BD5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAAF25AF24E47FA500D34BD5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CAAF25B124E47FA500D34BD5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CAAF25B424E47FA500D34BD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,9 +91,12 @@
 		CAAF25F024E6D09400D34BD5 /* concentrateInfoTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = concentrateInfoTableView.swift; sourceTree = "<group>"; };
 		CAAF25F224E7410D00D34BD5 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		CAB44EB624F68107007E27FF /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		CAB44EB824FAE1EB007E27FF /* APITruthOrDare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITruthOrDare.swift; sourceTree = "<group>"; };
 		CAB685DD24F01CF7004AAF26 /* addPackConcentrate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addPackConcentrate.swift; sourceTree = "<group>"; };
 		CAB8BF4E24EB25FB008EA452 /* AddPackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPackViewController.swift; sourceTree = "<group>"; };
 		CAB8BF5024EB2899008EA452 /* addPackCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addPackCollectionViewCell.swift; sourceTree = "<group>"; };
+		D11E266CDF1E0F8CCFA511A0 /* Pods_TruthOrDareTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TruthOrDareTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA26A1232E1BCEFDBB025778 /* Pods-TruthOrDare-TruthOrDareUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruthOrDare-TruthOrDareUITests.release.xcconfig"; path = "Target Support Files/Pods-TruthOrDare-TruthOrDareUITests/Pods-TruthOrDare-TruthOrDareUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +104,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8509545FB49BD6A1CFB2EFFA /* Pods_TruthOrDare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				086EF15DDC4D27A61EDFF4BA /* Pods_TruthOrDareTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,12 +120,78 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3C8FF928500447E3AF545E0 /* Pods_TruthOrDare_TruthOrDareUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9694913EB4624A3FFEB1E136 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C021FEFE35250F9830B2E036 /* Pods-TruthOrDare.debug.xcconfig */,
+				7254444AC0EB8605EED9FE56 /* Pods-TruthOrDare.release.xcconfig */,
+				6CE92054189BB00D7CAF06FF /* Pods-TruthOrDare-TruthOrDareUITests.debug.xcconfig */,
+				FA26A1232E1BCEFDBB025778 /* Pods-TruthOrDare-TruthOrDareUITests.release.xcconfig */,
+				BA3871A37A64FFD56B849B28 /* Pods-TruthOrDareTests.debug.xcconfig */,
+				8308A42F2EB131E36DE23CCE /* Pods-TruthOrDareTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AEF7CD5649B652AB4D46C2C5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				781F8C8FD1DFCDD4366A8788 /* Pods_TruthOrDare.framework */,
+				90FC736A9B53B065898F14CF /* Pods_TruthOrDare_TruthOrDareUITests.framework */,
+				D11E266CDF1E0F8CCFA511A0 /* Pods_TruthOrDareTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA0175F424FC55C9005E7C6A /* APIs */ = {
+			isa = PBXGroup;
+			children = (
+				CA0175F224FB0BE7005E7C6A /* APIDatabase.swift */,
+				CAB44EB824FAE1EB007E27FF /* APITruthOrDare.swift */,
+			);
+			path = APIs;
+			sourceTree = "<group>";
+		};
+		CA0175F524FC55F3005E7C6A /* Concentrates */ = {
+			isa = PBXGroup;
+			children = (
+				CAB685DD24F01CF7004AAF26 /* addPackConcentrate.swift */,
+				CAAF25E224E481F000D34BD5 /* GameConcentrate.swift */,
+				CAAF25EA24E5CBE500D34BD5 /* ConcentratePickPack.swift */,
+				CAAF25F024E6D09400D34BD5 /* concentrateInfoTableView.swift */,
+			);
+			path = Concentrates;
+			sourceTree = "<group>";
+		};
+		CA0175F624FC5623005E7C6A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CAAF25EC24E5F4BC00D34BD5 /* PackInfoViewController.swift */,
+				CAB44EB624F68107007E27FF /* AddTaskViewController.swift */,
+				CAB8BF4E24EB25FB008EA452 /* AddPackViewController.swift */,
+				CAAF25E024E481D400D34BD5 /* GameViewController.swift */,
+				CAAF25E824E4BE7000D34BD5 /* PickPackViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CA0175F724FC5647005E7C6A /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CAAF25E624E4BBBE00D34BD5 /* PackCollectionViewCell.swift */,
+				CAAF25EE24E6CDC400D34BD5 /* PackInfoTableViewCell.swift */,
+				CAB8BF5024EB2899008EA452 /* addPackCollectionViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		CAAF25A124E47FA500D34BD5 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +199,8 @@
 				CAAF25C624E47FAE00D34BD5 /* TruthOrDareTests */,
 				CAAF25D124E47FAE00D34BD5 /* TruthOrDareUITests */,
 				CAAF25AB24E47FA500D34BD5 /* Products */,
+				9694913EB4624A3FFEB1E136 /* Pods */,
+				AEF7CD5649B652AB4D46C2C5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,27 +217,20 @@
 		CAAF25AC24E47FA500D34BD5 /* TruthOrDare */ = {
 			isa = PBXGroup;
 			children = (
-				CAB44EB624F68107007E27FF /* AddTaskViewController.swift */,
-				CAB8BF5024EB2899008EA452 /* addPackCollectionViewCell.swift */,
-				CAB685DD24F01CF7004AAF26 /* addPackConcentrate.swift */,
-				CAB8BF4E24EB25FB008EA452 /* AddPackViewController.swift */,
-				CAAF25AD24E47FA500D34BD5 /* AppDelegate.swift */,
+				CA0175F424FC55C9005E7C6A /* APIs */,
+				CA0175F724FC5647005E7C6A /* Cells */,
+				CA0175F624FC5623005E7C6A /* Controllers */,
+				CA0175F524FC55F3005E7C6A /* Concentrates */,
 				CAAF25AF24E47FA500D34BD5 /* SceneDelegate.swift */,
+				CA01764524FC5C95005E7C6A /* AppDelegate.swift */,
 				CAAF25B124E47FA500D34BD5 /* ViewController.swift */,
 				CAAF25B324E47FA500D34BD5 /* Main.storyboard */,
 				CAAF25B924E47FAE00D34BD5 /* Assets.xcassets */,
 				CAAF25BB24E47FAE00D34BD5 /* LaunchScreen.storyboard */,
 				CAAF25BE24E47FAE00D34BD5 /* Info.plist */,
 				CAAF25B624E47FA500D34BD5 /* TruthOrDare.xcdatamodeld */,
-				CAAF25E024E481D400D34BD5 /* GameViewController.swift */,
-				CAAF25E224E481F000D34BD5 /* GameConcentrate.swift */,
-				CAAF25E624E4BBBE00D34BD5 /* PackCollectionViewCell.swift */,
-				CAAF25E824E4BE7000D34BD5 /* PickPackViewController.swift */,
-				CAAF25EE24E6CDC400D34BD5 /* PackInfoTableViewCell.swift */,
-				CAAF25EA24E5CBE500D34BD5 /* ConcentratePickPack.swift */,
-				CAAF25EC24E5F4BC00D34BD5 /* PackInfoViewController.swift */,
-				CAAF25F024E6D09400D34BD5 /* concentrateInfoTableView.swift */,
 				CAAF25F224E7410D00D34BD5 /* CardView.swift */,
+				CA01764F24FDB96E005E7C6A /* PacksManager.swift */,
 			);
 			path = TruthOrDare;
 			sourceTree = "<group>";
@@ -177,9 +260,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CAAF25D724E47FAE00D34BD5 /* Build configuration list for PBXNativeTarget "TruthOrDare" */;
 			buildPhases = (
+				6F3588FD488BB358DB6A5599 /* [CP] Check Pods Manifest.lock */,
 				CAAF25A624E47FA500D34BD5 /* Sources */,
 				CAAF25A724E47FA500D34BD5 /* Frameworks */,
 				CAAF25A824E47FA500D34BD5 /* Resources */,
+				D83168C63C9CF1736428EF33 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -194,6 +279,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CAAF25DA24E47FAE00D34BD5 /* Build configuration list for PBXNativeTarget "TruthOrDareTests" */;
 			buildPhases = (
+				64375DB488DB5642BB3B52C8 /* [CP] Check Pods Manifest.lock */,
 				CAAF25BF24E47FAE00D34BD5 /* Sources */,
 				CAAF25C024E47FAE00D34BD5 /* Frameworks */,
 				CAAF25C124E47FAE00D34BD5 /* Resources */,
@@ -212,9 +298,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CAAF25DD24E47FAE00D34BD5 /* Build configuration list for PBXNativeTarget "TruthOrDareUITests" */;
 			buildPhases = (
+				44E84C28D06282714E9B6A10 /* [CP] Check Pods Manifest.lock */,
 				CAAF25CA24E47FAE00D34BD5 /* Sources */,
 				CAAF25CB24E47FAE00D34BD5 /* Frameworks */,
 				CAAF25CC24E47FAE00D34BD5 /* Resources */,
+				D23A1CC6810EFE2C75CD1760 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -296,6 +384,109 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		44E84C28D06282714E9B6A10 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TruthOrDare-TruthOrDareUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64375DB488DB5642BB3B52C8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TruthOrDareTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6F3588FD488BB358DB6A5599 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TruthOrDare-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D23A1CC6810EFE2C75CD1760 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TruthOrDare-TruthOrDareUITests/Pods-TruthOrDare-TruthOrDareUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TruthOrDare-TruthOrDareUITests/Pods-TruthOrDare-TruthOrDareUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TruthOrDare-TruthOrDareUITests/Pods-TruthOrDare-TruthOrDareUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D83168C63C9CF1736428EF33 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TruthOrDare/Pods-TruthOrDare-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TruthOrDare/Pods-TruthOrDare-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TruthOrDare/Pods-TruthOrDare-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CAAF25A624E47FA500D34BD5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -307,9 +498,10 @@
 				CAAF25E324E481F000D34BD5 /* GameConcentrate.swift in Sources */,
 				CAB8BF4F24EB25FB008EA452 /* AddPackViewController.swift in Sources */,
 				CAAF25B224E47FA500D34BD5 /* ViewController.swift in Sources */,
+				CA01765024FDB96E005E7C6A /* PacksManager.swift in Sources */,
+				CA0175F324FB0BE7005E7C6A /* APIDatabase.swift in Sources */,
 				CAAF25E924E4BE7000D34BD5 /* PickPackViewController.swift in Sources */,
 				CAB8BF5124EB2899008EA452 /* addPackCollectionViewCell.swift in Sources */,
-				CAAF25AE24E47FA500D34BD5 /* AppDelegate.swift in Sources */,
 				CAAF25F124E6D09400D34BD5 /* concentrateInfoTableView.swift in Sources */,
 				CAAF25F324E7410E00D34BD5 /* CardView.swift in Sources */,
 				CAAF25B024E47FA500D34BD5 /* SceneDelegate.swift in Sources */,
@@ -317,7 +509,9 @@
 				CAAF25E724E4BBBE00D34BD5 /* PackCollectionViewCell.swift in Sources */,
 				CAAF25EF24E6CDC500D34BD5 /* PackInfoTableViewCell.swift in Sources */,
 				CAAF25EB24E5CBE500D34BD5 /* ConcentratePickPack.swift in Sources */,
+				CA01764624FC5C95005E7C6A /* AppDelegate.swift in Sources */,
 				CAAF25ED24E5F4BC00D34BD5 /* PackInfoViewController.swift in Sources */,
+				CAB44EB924FAE1EB007E27FF /* APITruthOrDare.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +519,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA0175FA24FC5949005E7C6A /* APIDatabase.swift in Sources */,
 				CAAF25C824E47FAE00D34BD5 /* TruthOrDareTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,6 +528,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA0175FB24FC594A005E7C6A /* APIDatabase.swift in Sources */,
 				CAAF25D324E47FAE00D34BD5 /* TruthOrDareUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +684,7 @@
 		};
 		CAAF25D824E47FAE00D34BD5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C021FEFE35250F9830B2E036 /* Pods-TruthOrDare.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -506,6 +703,7 @@
 		};
 		CAAF25D924E47FAE00D34BD5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7254444AC0EB8605EED9FE56 /* Pods-TruthOrDare.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -524,6 +722,7 @@
 		};
 		CAAF25DB24E47FAE00D34BD5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA3871A37A64FFD56B849B28 /* Pods-TruthOrDareTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -546,6 +745,7 @@
 		};
 		CAAF25DC24E47FAE00D34BD5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8308A42F2EB131E36DE23CCE /* Pods-TruthOrDareTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -568,6 +768,7 @@
 		};
 		CAAF25DE24E47FAE00D34BD5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6CE92054189BB00D7CAF06FF /* Pods-TruthOrDare-TruthOrDareUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -588,6 +789,7 @@
 		};
 		CAAF25DF24E47FAE00D34BD5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FA26A1232E1BCEFDBB025778 /* Pods-TruthOrDare-TruthOrDareUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

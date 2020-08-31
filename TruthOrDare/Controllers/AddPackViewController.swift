@@ -14,6 +14,7 @@ class AddPackViewController: UIViewController, UICollectionViewDelegate{
         vc.delegate = concentrate.self
         self.present(vc, animated: true)
     }
+    
     func collectionView(_ collectionView: UICollectionView,
     willDisplay cell: UICollectionViewCell,
     forItemAt indexPath: IndexPath){
@@ -39,7 +40,16 @@ class AddPackViewController: UIViewController, UICollectionViewDelegate{
     @IBOutlet weak var myCollectionView: UICollectionView!
     
     @IBAction func pressAddPackButton(_ sender: UIBarButtonItem) {
-        concentrate.savePack()
+        let altAddPack = UIAlertController(title: "осталось только придумать название!", message: "Залить твой пак на сервер?", preferredStyle: UIAlertController.Style.alert)
+        altAddPack.addAction(UIAlertAction(title: "Давай", style: UIAlertAction.Style.default){ _ in
+                print("save on server...")
+        })
+        altAddPack.addAction(UIAlertAction(title: "Не, спасибо", style: UIAlertAction.Style.default){ [unowned self] _ in
+            self.concentrate.savePackLocaly()
+        })
+        altAddPack.addTextField(configurationHandler: concentrate.handleTextField)
+        self.present(altAddPack, animated: true)
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()

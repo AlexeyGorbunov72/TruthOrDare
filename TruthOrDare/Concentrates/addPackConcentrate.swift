@@ -29,11 +29,40 @@ struct IdCounter {
 class addPackConcentrate: NSObject, UICollectionViewDataSource{
     var data = TasksWithId(pack: [])
     var delegate: GetCollectionView?
+    var textFieldAlert: UITextField?
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return data.pack.count
     }
-    func savePack(){
+    func handleTextField(textField: UITextField!){
+        if (textField) != nil {
+            self.textFieldAlert = textField!
+            self.textFieldAlert?.placeholder = "Твое название:";
+        }
+    }
+    func savePackLocaly(){
+        APIDatabase.savePack(pack: self.getPack(), tasks: self.getTasks())
+    }
+    private func getPack() -> Pack{
+        var levelAction = 0.0
+        var levelTruth = 0.0
+        data.pack.forEach{ (taskWithId) in
+            if taskWithId.task.isTruth == 0{
+                levelAction += Double(taskWithId.task.levelOfHard)!
+            } else {
+                levelTruth += Double(taskWithId.task.levelOfHard)!
+            }
+        }
+        let newPack = Pack.init(id: -1, title: textFieldAlert?.text ?? "???", levelAction: String(levelAction), levelTruth: String(levelTruth))
+        return newPack
         
+        
+    }
+    private func getTasks() -> [Task]{
+        var tasks: [Task] = []
+        data.pack.forEach{ (taskWithId) in
+            tasks.append(taskWithId.task)
+        }
+        return tasks
     }
     func animatePlease(_ indexPath: IndexPath, cell: UICollectionViewCell){
         if let cell = cell as? addPackCollectionViewCell{
@@ -47,15 +76,19 @@ class addPackConcentrate: NSObject, UICollectionViewDataSource{
         cell.idOfCell = data.pack[indexPath.row].id
         return cell
     }
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        print("iamwork lol")
-    }
+    
+    
     override init() {
         super.init()
         NotificationCenter.default
          .addObserver(self,
                       selector:#selector(sliderDidChangeValue(_:)),
         name: NSNotification.Name ("addPack.cell.slider.didChangeValue"),                                           object: nil)
+        NotificationCenter.default
+         .addObserver(self,
+                      selector:#selector(typeButtonDidChangeValue(_:)),
+        name: NSNotification.Name ("addPack.cell.button.didPress"),                                           object: nil)
+        
     }
     @objc func sliderDidChangeValue(_ notification: Notification){
         if let id = notification.userInfo?["id"] as? Int{
@@ -64,14 +97,18 @@ class addPackConcentrate: NSObject, UICollectionViewDataSource{
                     if id == data.pack[i].id{
                         data.pack[i].task.levelOfHard = String(newValue)
                     }
-                    
-                    
                 }
-                
             }
         }
-       
-                
+    }
+    @objc func typeButtonDidChangeValue(_ notification: Notification){
+        if let id = notification.userInfo?["id"] as? Int{
+            for i in 0..<data.pack.count{
+                if id == data.pack[i].id{
+                    data.pack[i].task.isTruth = data.pack[i].task.isTruth == 1 ? 0 : 1
+                }
+            }
+        }
     }
 }
 
@@ -84,15 +121,7 @@ extension addPackConcentrate: NewTaskCommunicate{
         
     }
 }
-extension addPackConcentrate: ChangeCellValue{
-    func changeTypeOfTask(newValue: Int, id: Int) {
-        print(3113123131)
-    }
-    
-    func changeSliderValue(newValue: Double, id: Int) {
-        
-    }
-}
+
 
 class TaskWithId{
     var id: Int

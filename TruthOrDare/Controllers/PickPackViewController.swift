@@ -10,7 +10,6 @@ import UIKit
 
 class PickPackViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    let url = "http://192.168.0.12:8000/api/getContentOfPack/"
     fileprivate let myCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -25,7 +24,7 @@ class PickPackViewController: UIViewController, UICollectionViewDelegate, UIColl
         return CGSize(width: myCollectionView.frame.width/1.5,height: myCollectionView.frame.height/2)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        concentrate.getPackContent(indexPath.row) { [unowned self] (tasks) in
+        APITruthOrDare.getPackContent(concentrate.getIdByIndexPath(indexPath.row)) { [unowned self] (tasks) in
             DispatchQueue.main.async {
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
                 vc.modalPresentationStyle = .fullScreen
