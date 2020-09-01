@@ -99,8 +99,23 @@
                         <viewLayoutGuide key="safeArea" id="8TM-FN-KYX"/>
                     </view>
                     <navigationItem key="navigationItem" id="81J-9P-6dr">
+                        <nil key="title"/>
                         <barButtonItem key="backBarButtonItem" title="назад" id="MB4-eB-xND"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="H9t-5n-QqV">
+                            <rect key="frame" x="68" y="5.5" width="239" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Паки с сервера"/>
+                                <segment title="Твои паки"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentedDidChange:" destination="tj8-fj-m7I" eventType="valueChanged" id="19c-dP-3GW"/>
+                            </connections>
+                        </segmentedControl>
                     </navigationItem>
+                    <connections>
+                        <outlet property="segmented" destination="H9t-5n-QqV" id="gSD-kn-mJa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cjF-Hj-2PY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

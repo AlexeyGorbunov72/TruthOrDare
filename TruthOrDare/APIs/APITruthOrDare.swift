@@ -8,12 +8,12 @@
 
 import Foundation
 private struct APISetup{
-    static let ip = "192.168.0.12:"
+    static let ip = "192.168.0.12"
     static let port = "8000"
 
 }
-struct APITruthOrDare {
-    static func getPackContent(_ id: Int, completionBlock: @escaping (Tasks) -> Void){
+class APITruthOrDare: PacksManager {
+    func getPackContent(_ id: Int, completionBlock: @escaping (Tasks) -> Void){
         if let url = URL(string: String(APIRequests.getContentOfPack + String(id))){
             URLSession.shared.dataTask(with: url){data, res, err in
                 if let data = data{
@@ -28,7 +28,7 @@ struct APITruthOrDare {
             }.resume()
         }
     }
-    static func getAllPacks(completionBlock: @escaping (Packs) -> Void){
+    func getAllPacks(completionBlock: @escaping (Packs) -> Void){
         if let url = URL(string: APIRequests.getPacks){
             URLSession.shared.dataTask(with: url){data, res, err in
                 if let data = data{
@@ -43,6 +43,6 @@ struct APITruthOrDare {
 }
 
 private struct APIRequests{
-    static let getPacks = "http://\(APISetup.ip)\(APISetup.port)/api/getPacks"
-    static let getContentOfPack = "http://\(APISetup.ip)\(APISetup.port)/api/getContentOfPack/"
+    static let getPacks = "http://\(APISetup.ip):\(APISetup.port)/api/getPacks"
+    static let getContentOfPack = "http://\(APISetup.ip):\(APISetup.port)/api/getContentOfPack/"
 }

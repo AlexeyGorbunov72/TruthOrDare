@@ -10,9 +10,9 @@ import Foundation
 import CoreData
 import UIKit
 
-struct APIDatabase{
+class APIDatabase: PacksManager{
     
-    private static func getLastIdPack(context: NSManagedObjectContext)-> Int16?{
+    private func getLastIdPack(context: NSManagedObjectContext)-> Int16?{
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "PackModel")
         fetchRequest.fetchLimit = 1
         let sort = NSSortDescriptor(key: #keyPath(PackModel.id), ascending: false)
@@ -30,37 +30,48 @@ struct APIDatabase{
         }
         return nil
     }
-    static func getAllPacks(){
+    func getAllPacks(completionBlock: @escaping (Packs) -> Void){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "PackModel")
         do {
             let packs = try context.fetch(fetchRequest)
+            var packsToReturn = Packs(packs: [])
             packs.forEach{(pack) in
-                print((pack as? PackModel)?.title)
-                APIDatabase.getPackContent(packId: (pack as! PackModel).id)
+                if let pack = pack as? PackModel{
+                    packsToReturn.packs.append(Pack(id: Int(pack.id),
+                                                    title: pack.title!,
+                                                    levelAction: pack.levelAction!,
+                                                    levelTruth: pack.levelTruth!))
+                }
             }
+            completionBlock(packsToReturn)
             
         } catch {
-            print("Cannot fetch Expenses")
+            print("APIDatabase::getAllPacks - fails")
         }
     }
-    static func getPackContent(_ id: Int,completionBlock: @escaping (Tasks) -> Void){
+    func getPackContent(_ id: Int,completionBlock: @escaping (Tasks) -> Void){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "TaskModel")
         fetchRequest.predicate = NSPredicate(format: "id == \(id)")
         do{
             let tasks = try context.fetch(fetchRequest)
-            let tasksToReturn = Tasks(pack: [])
+            var tasksToReturn = Tasks(pack: [])
             tasks.forEach{ (task) in
-                tasksToReturn.pack.append(<#T##newElement: Task##Task#>)
+                if let task = task as? TaskModel{
+                    tasksToReturn.pack.append(Task(levelOfHard: task.levelOfHard!,
+                                                   content: task.content!,
+                                                   isTruth: Int(task.isTruth)))
+                }
             }
+            completionBlock(tasksToReturn)
         } catch {
-            print("fuck")
+            print("APIDatabase::getPackContent - fails")
         }
     }
-    static func savePack(pack: Pack, tasks: [Task]){
+    func savePack(pack: Pack, tasks: [Task]){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let packModel = NSEntityDescription.entity(forEntityName: "PackModel", in: context)
@@ -77,12 +88,11 @@ struct APIDatabase{
         do {
            try context.save()
           } catch {
-           print("Failed saving")
+           print("APIDatabase::Failed saving")
         }
-       getAllPacks()
        
     }
-    private static func saveTasks(tasks: [Task], packId: Int16){
+    private func saveTasks(tasks: [Task], packId: Int16){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let taskModel = NSEntityDescription.entity(forEntityName: "TaskModel", in: context)

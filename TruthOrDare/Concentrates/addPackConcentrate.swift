@@ -40,19 +40,23 @@ class addPackConcentrate: NSObject, UICollectionViewDataSource{
         }
     }
     func savePackLocaly(){
-        APIDatabase.savePack(pack: self.getPack(), tasks: self.getTasks())
+        APIDatabase().savePack(pack: self.getPack(), tasks: self.getTasks())
     }
     private func getPack() -> Pack{
         var levelAction = 0.0
         var levelTruth = 0.0
+        var counterAction = 0.01
+        var counterTruth = 0.01
         data.pack.forEach{ (taskWithId) in
             if taskWithId.task.isTruth == 0{
                 levelAction += Double(taskWithId.task.levelOfHard)!
+                counterAction += 1
             } else {
                 levelTruth += Double(taskWithId.task.levelOfHard)!
+                counterTruth += 1
             }
         }
-        let newPack = Pack.init(id: -1, title: textFieldAlert?.text ?? "???", levelAction: String(levelAction), levelTruth: String(levelTruth))
+        let newPack = Pack.init(id: -1, title: textFieldAlert?.text ?? "???", levelAction: String(format: "%.1f", levelAction/counterAction), levelTruth: String(format: "%.1f", levelTruth/counterTruth))
         return newPack
         
         

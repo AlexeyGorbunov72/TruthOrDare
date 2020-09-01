@@ -8,6 +8,6 @@
 
 import Foundation
 protocol PacksManager {
-    static func getPackContent(_ id: Int, completionBlock: @escaping (Tasks) -> Void)
-    static func getAllPacks(completionBlock: @escaping (Packs) -> Void)
+    func getPackContent(_ id: Int, completionBlock: @escaping (Tasks) -> Void)
+    func getAllPacks(completionBlock: @escaping (Packs) -> Void)
 }

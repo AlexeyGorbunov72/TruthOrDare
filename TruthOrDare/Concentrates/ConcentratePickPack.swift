@@ -14,7 +14,8 @@ protocol needsReload {
 class ConcentrateAPIPickPack: NSObject, UICollectionViewDataSource{
     var packsHub = Packs(packs: [Pack.init(id: -1, title: "", levelAction: "1488", levelTruth: "228")])
     var delegate: needsReload?
-    
+    var dataSourse: PacksManager = APITruthOrDare() as PacksManager
+    var isLocal = false
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return packsHub.packs.count
@@ -26,13 +27,25 @@ class ConcentrateAPIPickPack: NSObject, UICollectionViewDataSource{
         packCell.level.text = packsHub.packs[indexPath.row].levelTruth
         return packCell
     }
-    
+    func changeDataSourse(){
+        isLocal.toggle()
+        if isLocal{
+            dataSourse = APIDatabase()
+        } else {
+            dataSourse = APITruthOrDare()
+        }
+        
+        getAllPacks()
+    }
 
     func getAllPacks(){
-        APITruthOrDare.getAllPacks(completionBlock: {(packs) in
-            self.packsHub = packs
-            self.delegate!.reloadCollectionViewPlease()
-        })
+        dataSourse.getAllPacks(completionBlock: {(packs) in
+                self.packsHub = packs
+                self.delegate!.reloadCollectionViewPlease()
+            })
+        
+            
+        
     }
     
     public func getIdByIndexPath(_ ind: Int) -> Int{

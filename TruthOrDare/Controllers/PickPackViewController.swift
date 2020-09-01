@@ -10,6 +10,11 @@ import UIKit
 
 class PickPackViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
+    @IBOutlet weak var segmented: UISegmentedControl!
+    @IBAction func segmentedDidChange(_ sender: Any) {
+        
+        concentrate.changeDataSourse()
+    }
     fileprivate let myCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -24,17 +29,20 @@ class PickPackViewController: UIViewController, UICollectionViewDelegate, UIColl
         return CGSize(width: myCollectionView.frame.width/1.5,height: myCollectionView.frame.height/2)
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        APITruthOrDare.getPackContent(concentrate.getIdByIndexPath(indexPath.row)) { [unowned self] (tasks) in
-            DispatchQueue.main.async {
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
-                vc.modalPresentationStyle = .fullScreen
-                vc.tasks = tasks
-                
-                self.present(vc, animated: true)
+        
+        concentrate.dataSourse.getPackContent(concentrate.getIdByIndexPath(indexPath.row)) { [unowned self] (tasks) in
+                DispatchQueue.main.async {
+                    let vc = self.storyboard?.instantiateViewController(withIdentifier: "GameViewController") as! GameViewController
+                    vc.modalPresentationStyle = .fullScreen
+                    vc.tasks = tasks
+                    
+                    self.present(vc, animated: true)
+                    
+                }
                 
             }
-            
-        }
+        
+        
     }
     
     override func viewDidLoad() {
