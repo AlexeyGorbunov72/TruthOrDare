@@ -42,10 +42,10 @@ class AddPackViewController: UIViewController, UICollectionViewDelegate{
     @IBAction func pressAddPackButton(_ sender: UIBarButtonItem) {
         let altAddPack = UIAlertController(title: "осталось только придумать название!", message: "Залить твой пак на сервер?", preferredStyle: UIAlertController.Style.alert)
         altAddPack.addAction(UIAlertAction(title: "Давай", style: UIAlertAction.Style.default){ _ in
-                print("save on server...")
+            self.concentrate.savePack(isLocal: false)
         })
         altAddPack.addAction(UIAlertAction(title: "Не, спасибо", style: UIAlertAction.Style.default){ [unowned self] _ in
-            self.concentrate.savePackLocaly()
+            self.concentrate.savePack(isLocal: true)
         })
         altAddPack.addTextField(configurationHandler: concentrate.handleTextField)
         self.present(altAddPack, animated: true)

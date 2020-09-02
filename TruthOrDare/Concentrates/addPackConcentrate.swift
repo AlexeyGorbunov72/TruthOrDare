@@ -39,7 +39,19 @@ class addPackConcentrate: NSObject, UICollectionViewDataSource{
             self.textFieldAlert?.placeholder = "Твое название:";
         }
     }
+    func savePack(isLocal: Bool){
+        if isLocal{
+            savePackLocaly()
+        } else {
+            savePackOnServerAndLocaly()
+        }
+    }
     func savePackLocaly(){
+        
+        APIDatabase().savePack(pack: self.getPack(), tasks: self.getTasks())
+    }
+    func savePackOnServerAndLocaly(){
+        APITruthOrDare().savePack(pack: self.getPack(), tasks: self.getTasks())
         APIDatabase().savePack(pack: self.getPack(), tasks: self.getTasks())
     }
     private func getPack() -> Pack{

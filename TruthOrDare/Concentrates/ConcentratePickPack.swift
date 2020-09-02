@@ -58,21 +58,21 @@ class ConcentrateAPIPickPack: NSObject, UICollectionViewDataSource{
     }
    
 }
-struct Pack: Decodable{
+struct Pack: Codable{
     var id: Int
     var title: String
     var levelAction: String
     var levelTruth: String
 }
-struct Packs: Decodable{
+struct Packs: Codable{
     var packs: [Pack]
 }
 
-struct Task: Decodable{
+struct Task: Codable{
     var levelOfHard: String
     var content: String
     var isTruth: Int
 }
-struct Tasks: Decodable {
+struct Tasks: Codable {
     var pack: [Task]
 }
