@@ -46,8 +46,6 @@ class APITruthOrDare: PacksManager {
         setToEncodeJson.tasks = tasks
         let jsonEncoder = JSONEncoder()
         let jsonData = try? jsonEncoder.encode(setToEncodeJson)
-        print(String(data: jsonData!, encoding: String.Encoding.utf8))
-        
         var request = URLRequest(url: URL(string: APIRequests.loadPack)!)
         request.httpMethod = "POST"
         request.httpBody = jsonData
@@ -67,41 +65,11 @@ class APITruthOrDare: PacksManager {
         
     }
     
-    private func convertPackForJsonEncode(pack: Pack) -> PackForJson{
-        var packForJson = PackForJson()
-        packForJson += pack
-        return packForJson
-    }
     
-    private func convertTaskForJsonEncode(task: Task) -> TaskForJson{
-        var taskForJson = TaskForJson()
-        taskForJson += task
-        return taskForJson
-    }
 }
 
 
-private class PackForJson: Codable{
-    var title: String?
-    var levelAction: String?
-    var levelTruth: String?
-    
-    static func +=( left: inout PackForJson, pack: Pack){
-        left.title = pack.title
-        left.levelAction = pack.levelAction
-        left.levelTruth = pack.levelTruth
-    }
-}
-private class TaskForJson: Codable{
-    var levelOfHard: String?
-    var content: String?
-    var isTruth: Int?
-    static func +=( left: inout TaskForJson, task: Task){
-        left.levelOfHard = task.levelOfHard
-        left.content = task.content
-        left.isTruth = task.isTruth
-    }
-}
+
 private class SetToEncodeJson: Codable{
     var pack: Pack?
     var tasks: [Task]?
